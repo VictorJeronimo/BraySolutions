@@ -5,7 +5,7 @@
 - HTML5
 - CSS3
 - JavaScript
-- JSON Server (se aplicável)
+- JSON Server
 
 ## 🙋 Time de Desenvolvedores
 - Victor Jeronimo da Silva (Desenvolvedor Principal)
