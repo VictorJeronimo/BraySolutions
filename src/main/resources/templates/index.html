@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+    <!-- Navbar Fixa no topo -->
+    <div class="navbar">
+        <span class="logo">Bray Solutions</span>
+    </div>
+
+    <h1>Seja bem-vindo!</h1>
+
+    <!-- Botões para navegação -->
+    <div class="buttons-container">
+        <a th:href="@{/cadastroProduto}" class="button">Cadastro de Produto</a>
+        <a th:href="@{/cadastroVenda}" class="button">Cadastro de Venda</a>
+    </div>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+        <div class="copyright">Todos os Direitos Reservados - Bray Solutions</div>
+    </footer>
+
+</body>
+</html>

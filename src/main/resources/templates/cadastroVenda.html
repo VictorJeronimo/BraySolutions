@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Venda</title>
+        <link rel="stylesheet" th:href="@{/styles.css}">
+        <script src="/js/scripts.js"></script> <!-- Link para o JavaScript -->
+    </head>
+    <body>
+
+        <!-- Navbar Fixa no topo -->
+        <div class="navbar">
+            <span class="logo">Bray Solutions</span>
+            <ul>
+                <li><a th:href="@{/}">Página Inicial</a></li>
+                <li><a th:href="@{/cadastroProduto}">Cadastro de Produto</a></li>
+            </ul>
+        </div>
+
+        <h1>Cadastro de Venda</h1>
+        <form onsubmit="return validarFormularioVenda()">
+            <label for="nomeCliente">Nome do Cliente:</label>
+            <input type="text" id="nomeCliente" name="nomeCliente" required>
+            <br>
+
+            <label for="dataVenda">Data da Venda:</label>
+            <input type="date" id="dataVenda" name="dataVenda" required>
+            <br>
+
+            <label for="nomeProdutoVenda">Nome do Produto:</label>
+            <input type="text" id="nomeProdutoVenda" name="nomeProdutoVenda" required>
+            <br>
+
+            <button type="submit">Cadastrar Venda</button>
+        </form>
+
+        <!-- Botão de retorno para a página inicial -->
+        <div class="center">
+            <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+            <div class="copyright">Todos os Direitos Reservados - Bray Solutions</div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Produto</title>
+        <link rel="stylesheet" th:href="@{/styles.css}">
+        <script src="/js/scripts.js"></script> <!-- Link para o JavaScript -->
+    </head>
+    <body>
+
+        <!-- Navbar Fixa no topo -->
+        <div class="navbar">
+            <span class="logo">Bray Solutions</span>
+            <ul>
+                <li><a th:href="@{/}">Página Inicial</a></li>
+                <li><a th:href="@{/cadastroVenda}">Cadastro de Venda</a></li>
+            </ul>
+        </div>
+
+        <h1>Cadastro de Produto</h1>
+        <form onsubmit="return validarFormularioProduto()">
+            <label for="nomeProduto">Nome do Produto:</label>
+            <input type="text" id="nomeProduto" name="nomeProduto" required>
+            <br>
+
+            <label for="dataEntrada">Data de Entrada:</label>
+            <input type="date" id="dataEntrada" name="dataEntrada" required>
+            <br>
+
+            <label for="tipoProduto">Tipo de Produto:</label>
+            <select id="tipoProduto" name="tipoProduto" required>
+                <option value="" disabled selected>Selecione o Tipo</option>
+                <option value="Eletrônico">Eletrônico</option>
+                <option value="Móvel">Móvel</option>
+                <option value="Vestuário">Vestuário</option>
+                <option value="Alimento">Alimento</option>
+            </select>
+            <br>
+
+            <button type="submit">Cadastrar Produto</button>
+        </form>
+        <!-- Botão de retorno para a página inicial -->
+        <div class="center">
+            <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+            <div class="copyright">Todos os Direitos Reservados - Bray Solutions</div>
+        </footer>
+
+    </body>
+</html>
