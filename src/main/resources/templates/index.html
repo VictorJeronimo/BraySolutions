@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <link rel="stylesheet" th:href="@{/styles.css}">
+    <script th:src="@{/js/scripts.js}" defer></script>
 </head>
 <body>
 
@@ -19,6 +20,8 @@
     <div class="buttons-container">
         <a th:href="@{/cadastroProduto}" class="button">Cadastro de Produto</a>
         <a th:href="@{/cadastroVenda}" class="button">Cadastro de Venda</a>
+        <a th:href="@{/produto/listar}" class="button">Lista de Produtos</a> <!-- Atualizado para /produto/listar -->
+        <a th:href="@{/venda/listar}" class="button">Lista de Vendas</a> <!-- Botão para lista de vendas -->
     </div>
     
     <!-- Rodapé -->

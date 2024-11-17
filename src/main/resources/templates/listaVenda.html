@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Vendas</title>
+        <link rel="stylesheet" th:href="@{/styles.css}">
+        <script th:src="@{/js/scripts.js}" defer></script>
+    </head>
+    <body>
+
+        <!-- Navbar Fixa no topo -->
+        <div class="navbar">
+            <span class="logo">Bray Solutions</span>
+            <ul>
+                <li><a th:href="@{/}">Página Inicial</a></li>
+                <li><a th:href="@{/cadastroProduto}">Cadastro de Produto</a></li>
+                <li><a th:href="@{/cadastroVenda}">Cadastro de Venda</a></li>
+            </ul>
+        </div>
+
+        <h1>Lista de Vendas</h1>
+
+        <!-- Tabela para listar as vendas -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nome do Cliente</th>
+                    <th>Data da Venda</th>
+                    <th>Produto Vendido</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="venda : ${vendas}">
+                    <td th:text="${venda.nomeCliente}"></td>
+                    <td th:text="${venda.dataVenda}"></td>
+                    <td th:text="${venda.nomeProduto}"></td>
+                    <td>
+                        <!-- Botão Editar -->
+                        <a th:href="@{/venda/editarVenda/{id}(id=${venda.id})}">Editar</a>
+                        <!-- Botão Deletar -->
+                        <a th:href="@{/venda/deletarVenda/{id}(id=${venda.id})}" 
+                           onclick="return confirm('Tem certeza que deseja excluir?')">Deletar</a>
+
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!-- Botão de retorno para a página inicial -->
+        <div class="center">
+            <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+            <div class="copyright">Todos os Direitos Reservados - Bray Solutions</div>
+        </footer>
+
+    </body>
+</html>

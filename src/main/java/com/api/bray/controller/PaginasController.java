@@ -20,4 +20,14 @@ public class PaginasController {
     public String cadastroVenda() {
         return "cadastroVenda";  // Renderiza o arquivo cadastroVenda.html
     }
+
+    @GetMapping("/listaProduto")  // Mapeia a página de lista de produtos
+    public String listaProduto() {
+        return "listaProduto";  // Renderiza o arquivo listaProduto.html
+    }
+
+    @GetMapping("/listaVenda")  // Mapeia a página de lista de vendas
+    public String listaVenda() {
+        return "listaVenda";  // Renderiza o arquivo listaVenda.html
+    }
 }

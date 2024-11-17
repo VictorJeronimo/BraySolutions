@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro de Venda</title>
         <link rel="stylesheet" th:href="@{/styles.css}">
-        <script src="/js/scripts.js"></script> <!-- Link para o JavaScript -->
+        <script th:src="@{/js/scripts.js}" defer></script>
     </head>
     <body>
 
@@ -14,12 +14,13 @@
             <span class="logo">Bray Solutions</span>
             <ul>
                 <li><a th:href="@{/}">Página Inicial</a></li>
-                <li><a th:href="@{/cadastroProduto}">Cadastro de Produto</a></li>
+                <li><a th:href="@{/venda/listar}">Listar Vendas</a></li> <!-- Alterado para o novo caminho -->
             </ul>
         </div>
 
         <h1>Cadastro de Venda</h1>
-        <form onsubmit="return validarFormularioVenda()">
+        <!-- Formulário configurado para enviar os dados corretamente -->
+        <form th:action="@{/venda/salvar}" method="post">
             <label for="nomeCliente">Nome do Cliente:</label>
             <input type="text" id="nomeCliente" name="nomeCliente" required>
             <br>
@@ -28,8 +29,8 @@
             <input type="date" id="dataVenda" name="dataVenda" required>
             <br>
 
-            <label for="nomeProdutoVenda">Nome do Produto:</label>
-            <input type="text" id="nomeProdutoVenda" name="nomeProdutoVenda" required>
+            <label for="nomeProduto">Nome do Produto:</label>
+            <input type="text" id="nomeProduto" name="nomeProduto" required>
             <br>
 
             <button type="submit">Cadastrar Venda</button>

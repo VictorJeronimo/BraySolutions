@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar Venda</title>
+        <link rel="stylesheet" th:href="@{/styles.css}"> <!-- Link para o arquivo CSS, se necessário -->
+        <script th:src="@{/js/scripts.js}" defer></script>
+    </head>
+    <body>
+        <!-- Navbar Fixa no topo -->
+        <div class="navbar">
+            <span class="logo">Bray Solutions</span>
+        </div>
+        <div class="container">
+            <h1>Editar Venda</h1>
+
+            <!-- Formulário para editar a venda -->
+            <form th:action="@{/venda/atualizar}" method="post">
+                <!-- Campo oculto para enviar o ID da venda -->
+                <input type="hidden" th:value="${venda.id}" name="id"/>
+
+                <div>
+                    <label for="nomeCliente">Nome do Cliente:</label>
+                    <input type="text" id="nomeCliente" name="nomeCliente" th:value="${venda.nomeCliente}" required/>
+                </div>
+                <br>
+
+                <div>
+                    <label for="dataVenda">Data da Venda:</label>
+                    <input type="date" id="dataVenda" name="dataVenda" th:value="${venda.dataVenda}" required/>
+                </div>
+                <br>
+
+                <div>
+                    <label for="nomeProduto">Nome do Produto:</label>
+                    <input type="text" id="nomeProduto" name="nomeProduto" th:value="${venda.nomeProduto}" required/>
+                </div>
+                <br>
+
+                <button type="submit">Salvar Alterações</button>
+            </form>
+
+            <br>
+
+            <!-- Botão para voltar à lista de vendas -->
+            <button onclick="window.location.href = '/venda/listar'">Voltar para a Lista</button>
+        </div>
+        <!-- Botão de retorno para a página inicial -->
+        <div class="center">
+            <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+        </div>
+        <!-- Rodapé -->
+        <footer>
+            <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+            <div class="copyright">Todos os Direitos Reservados - Bray Solutions</div>
+        </footer>
+    </body>
+</html>
